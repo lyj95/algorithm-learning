@@ -1,3 +1,3 @@
-# coding-test
+# Algorithm Learning
 
-### programmers & backjoon & codility
+### algorithm & coding test
