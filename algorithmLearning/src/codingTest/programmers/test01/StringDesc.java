@@ -5,10 +5,10 @@ import java.util.Collections;
 
 
 /**
- * ¹®ÀÚ¿­ ³»¸²Â÷¼øÀ¸·Î ¹èÄ¡ÇÏ±â
+ * ë¬¸ìì—´ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë°°ì¹˜í•˜ê¸°
  * @author Yeji
- * @param ¹«ÀÛÀ§ÀÇ ¹®ÀÚ¿­
- * @return ³»¸²Â÷¼øÀ¸·Î Á¤·ÄµÈ ¹®ÀÚ¿­
+ * @param ë¬´ì‘ìœ„ì˜ ë¬¸ìì—´
+ * @return ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ëœ ë¬¸ìì—´
  */
 public class StringDesc {
 	public String solution(String s) {

@@ -4,7 +4,7 @@ public class OddString {
 	public String solution(String s) {
 		String answer = "";
 
-		//´Ü¾î´Â ÇÏ³ª ÀÌ»óÀÇ °ø¹é¹®ÀÚ·Î ±¸ºĞµÇ¾î ÀÖ´Ù
+		//ë‹¨ì–´ëŠ” í•˜ë‚˜ ì´ìƒì˜ ê³µë°±ë¬¸ìë¡œ êµ¬ë¶„ë˜ì–´ ìˆë‹¤
 		
 		String str[] = s.split("");
 
@@ -30,7 +30,7 @@ public class OddString {
 	
 	  public String anotherSolution(String s) {
 		  	
-		  // ´õ °£´ÜÇÏ°Ô Ç®ÀÌ °¡´É
+		  	// ë” ê°„ë‹¨í•˜ê²Œ í’€ì´ ê°€ëŠ¥
 	        String answer = "";
 	        int cnt = 0;
 	        String[] array = s.split("");

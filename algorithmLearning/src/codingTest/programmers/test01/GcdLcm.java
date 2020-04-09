@@ -1,6 +1,6 @@
 package codingTest.programmers.test01;
 
-//ÃÖ´ë°ø¾à¼ö ÃÖ¼Ò°ø¹è¼ö 
+//ìµœì†Œ ê³µë°°ìˆ˜ ìµœëŒ€ ê³µì•½ìˆ˜
 public class GcdLcm {
 	public int[] solution(int n, int m) {
 	      int[] answer = new int[2];

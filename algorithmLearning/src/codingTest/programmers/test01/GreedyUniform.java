@@ -1,6 +1,6 @@
 package codingTest.programmers.test01;
 
-//ÇÁ·Î±×·¡¸Ó½º Ã¼À°º¹ ¹®Á¦
+//ì²´ìœ¡ë³µ ë¬¸ì œ
 public class GreedyUniform {
 	    public int solution(int n, int[] lost, int[] reserve) {
 	         int answer = n;
