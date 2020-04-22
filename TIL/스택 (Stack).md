@@ -12,7 +12,13 @@
 
 
 
-#### 스택 직접 구현
+#### 스택의 활용 예
+
+수식계산, 수식괄호검사, 웹브라우저의 뒤로/앞으로
+
+
+
+#### 스택의 구현
 
 - 배열을 이용한 스택 구현
 
@@ -111,6 +117,19 @@ public class ArrayStack {
 
 
 
+- java.util.Stack 이용한 스택 구현
+
+```java
+Stack st = new Stack();
+		
+st.push("0");
+st.push("1");
+st.push("2");
+
+while(!st.isEmpty()) {		//Stack이 비어있는지 알려줌
+	System.out.println(st.pop());
+}
+```
 
 
 
@@ -119,4 +138,7 @@ public class ArrayStack {
 
 
 
-> "자료구조와 함께 배우는 알고리즘 입문-자바편(Bohyoh Shibata 지음, 강민 옮김)" 참고 함
+
+> "자료구조와 함께 배우는 알고리즘 입문-자바편(Bohyoh Shibata 지음, 강민 옮김)" 참고
+>
+> "Java의 정석(남궁 성 지음)" 참고
