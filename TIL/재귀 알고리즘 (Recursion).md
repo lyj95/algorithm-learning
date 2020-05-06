@@ -46,9 +46,7 @@ public class Factorial {
 
 ex )  78696과 19332의 최대공약수를 구하면,
 
-![image-20200427154106670](./images/image-20200427154106670.png)
-
-
+![image-20200427154106670](https://user-images.githubusercontent.com/58761111/81143842-c70f3c00-8fad-11ea-8c36-7bb2e3e07040.png)
 
 따라서, 최대공약수는 36이다.
 
