@@ -1,3 +1,6 @@
 # Algorithm Learning
 
-### algorithm & coding test
+### 👩🏻‍💻 TIL
+### algorithm (java)
+### algorithm (c++)
+### coding test
