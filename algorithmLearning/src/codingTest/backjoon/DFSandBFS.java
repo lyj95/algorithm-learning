@@ -1,77 +1,79 @@
 package codingTest.backjoon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class DFSandBFS {
 	public static int n, m, v;
-	public static boolean[] dfsVisited;
-	public static boolean[] bfsVisited;
+	public static boolean[] visited;
 	public static LinkedList<Integer>[] nodeList;
-	
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		m = sc.nextInt();
-		v = sc.nextInt();
-		
-		nodeList = new LinkedList[n+1];
-		dfsVisited = new boolean[n+1];
-		bfsVisited = new boolean[n+1];
 
-		for(int i=0; i<=n; i++) {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());;
+		v = Integer.parseInt(st.nextToken());;
+
+		nodeList = new LinkedList[n + 1];
+		visited = new boolean[n + 1];
+
+		for (int i = 0; i <= n; i++) {
 			nodeList[i] = new LinkedList<Integer>();
 		}
-		
-		for(int i=0; i<m; i++) {
-			int node1 = sc.nextInt();
-			int node2 = sc.nextInt();
-			
+
+		for (int i = 0; i < m; i++) {
+			st = new StringTokenizer(br.readLine());
+			int node1 = Integer.parseInt(st.nextToken());;
+			int node2 = Integer.parseInt(st.nextToken());;
+
 			nodeList[node1].add(node2);
 			nodeList[node2].add(node1);
-			
-			Collections.sort(nodeList[node1]);
-			Collections.sort(nodeList[node2]);
-			
+
+			for (int j = 0; j < nodeList.length; j++) {
+				Collections.sort(nodeList[j]);
+			}
+
 		}
-		
+
 		dfs(v);
 		System.out.println();
+		visited = new boolean[n + 1];
 		bfs(v);
 	}
-	
+
 	public static void dfs(int node) {
-		if(dfsVisited[node]) return;	// node를 이미 방문했으면 끝
-		
-		dfsVisited[node] = true;		// node를 방문
-		System.out.print(node + " ");	// 방문한 노드 출력
-		
-		for(int nextNode : nodeList[node]) {
-			dfs(nextNode);	// 해당 노드의 다음 노드를 탐색
+		if (visited[node])
+			return; // node를 이미 방문했으면 끝
+
+		visited[node] = true; // node를 방문
+		System.out.print(node + " "); // 방문한 노드 출력
+
+		for (int nextNode : nodeList[node]) {
+			dfs(nextNode); // 해당 노드의 다음 노드를 탐색
 		}
 	}
-	
+
 	public static void bfs(int node) {
 		Queue<Integer> queue = new LinkedList<Integer>();
-		
-		
+
 		queue.offer(node);
-		
-		bfsVisited[node] = true;
-		
-		while(!queue.isEmpty()) {
+		visited[node] = true;
+
+		while (!queue.isEmpty()) {
 			int temp = queue.poll();
-			
 			System.out.print(temp + " ");
-			
-			for(int i=0; i<=n; n++) {
-				
-				if(!bfsVisited[i]) {
-					queue.offer(i);
-					bfsVisited[i] = true;
+
+			for (int nextNode : nodeList[temp]) {
+				if (!visited[nextNode]) {
+					queue.offer(nextNode);
+					visited[nextNode] = true;
 				}
 			}
 		}
