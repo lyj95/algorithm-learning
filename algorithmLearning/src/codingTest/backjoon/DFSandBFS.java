@@ -3,13 +3,13 @@ package codingTest.backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class DFSandBFS {
-	public static int n, m, v;
 	public static boolean[] visited;
 	public static LinkedList<Integer>[] nodeList;
 
@@ -17,9 +17,9 @@ public class DFSandBFS {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		n = Integer.parseInt(st.nextToken());
-		m = Integer.parseInt(st.nextToken());;
-		v = Integer.parseInt(st.nextToken());;
+		int n = Integer.parseInt(st.nextToken());
+		int m = Integer.parseInt(st.nextToken());;
+		int v = Integer.parseInt(st.nextToken());;
 
 		nodeList = new LinkedList[n + 1];
 		visited = new boolean[n + 1];
@@ -30,21 +30,20 @@ public class DFSandBFS {
 
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine());
-			int node1 = Integer.parseInt(st.nextToken());;
-			int node2 = Integer.parseInt(st.nextToken());;
+			int node1 = Integer.parseInt(st.nextToken());
+			int node2 = Integer.parseInt(st.nextToken());
 
 			nodeList[node1].add(node2);
 			nodeList[node2].add(node1);
 
-			for (int j = 0; j < nodeList.length; j++) {
-				Collections.sort(nodeList[j]);
-			}
-
+		}
+		for (int j = 0; j < nodeList.length; j++) {
+			Collections.sort(nodeList[j]);
 		}
 
 		dfs(v);
 		System.out.println();
-		visited = new boolean[n + 1];
+		Arrays.fill(visited, false);
 		bfs(v);
 	}
 
@@ -63,8 +62,8 @@ public class DFSandBFS {
 	public static void bfs(int node) {
 		Queue<Integer> queue = new LinkedList<Integer>();
 
-		queue.offer(node);
-		visited[node] = true;
+		queue.offer(node);		// 탐색 시작 노드 큐에 저장
+		visited[node] = true;	// 방문했으면 true
 
 		while (!queue.isEmpty()) {
 			int temp = queue.poll();

@@ -31,7 +31,7 @@ public class Virus {
 	public static void checkVirus(int node) {
 		visited[node] = 1;	// 해당 노드를 방문
 		for(int i=1; i<n+1; i++) {
-				if(arr[node][i] == 1 && visited[i]==0) {
+				if(arr[node][i] == 1 && visited[i] == 0) {
 					cnt++;
 					checkVirus(i);
 				}
