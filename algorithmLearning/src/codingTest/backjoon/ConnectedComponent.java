@@ -46,7 +46,7 @@ public class ConnectedComponent {
 		System.out.println(cnt);
 	}
 	
-	public static void check(int i) {
+	public static void check(int i) { //dfs
 		if(visited[i]) {		// 만약 해당 정점 방문 했으면 반환
 			return;
 		}	
