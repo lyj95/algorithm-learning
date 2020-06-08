@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Ship {
-	static private ArrayList<Integer> nList = new ArrayList<Integer>(); // 각 크레인의 무게 제한
-	static private ArrayList<Integer> mList = new ArrayList<Integer>(); // 각 박스의 무게
+	static private ArrayList<Integer> nList = new ArrayList<Integer>(); // 각 크레인n의 무게 제한
+	static private ArrayList<Integer> mList = new ArrayList<Integer>(); // 각 박스m의 무게
 	static private int N, M;
 	static private int cnt = 0;
 
@@ -26,8 +26,8 @@ public class Ship {
 
 		Collections.sort(mList, Collections.reverseOrder());
 		Collections.sort(nList, Collections.reverseOrder());
-
-		if (mList.get(0) > nList.get(0)) {
+		// 박스 0번째                    크레인 0번째
+		if (mList.get(0) > nList.get(0)) {	
 			cnt = -1;		// 가장 큰 상자를 가장 큰 크레인으로 옮길 수 없으면 모든 상자를 옮길 수 없기 때문에 -1
 		} else {
 			carryBox();		// 해당 함수는 모든 상자를 옮길 수 있다는 전제로 시작
@@ -41,10 +41,12 @@ public class Ship {
 	static void carryBox() {		
 
 		while (mList.size() > 0) {	// 옮길 상자가 더이상 없을 때 까지
-			int index = 0;
-			for (int i = 0; i < mList.size(); i++) {
+			int index = 0;		// 크레인 인덱스
+			
+			for (int i = 0; i < mList.size(); i++) {	// 모든 박스 검사 
+				
 				if (index == nList.size() ) {		// 크래인 n개에 실을 수 있는 박스를 다 검사했을 경우 
-					break;
+					break;		//for문만 나가는거임
 				}
 
 				if (mList.get(i) <= nList.get(index)) {	//index째 크레인에 i번째 상자를 실을 수 있을 때
