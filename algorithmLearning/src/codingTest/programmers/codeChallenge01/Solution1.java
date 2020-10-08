@@ -28,6 +28,8 @@ public class Solution1 {
 		Arrays.sort(answer);
 		return answer;
 	}
+	
+	//처음에 시도한 방법
 //	public int[] solution(int[] numbers) {
 //		
 //		List<Integer> list = new ArrayList<Integer>();
