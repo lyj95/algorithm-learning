@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// 2439번 : 별 찍기 - 2
 public class Star2 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
